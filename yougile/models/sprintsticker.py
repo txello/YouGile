@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class ProjectController_search(BaseModel):
+class SprintStickerController_search(BaseModel):
     '''
     Получить список
     
@@ -14,7 +14,7 @@ class ProjectController_search(BaseModel):
     https://ru.yougile.com/api-v2#/operations/SprintStickerController_search
     '''
     _method:str = 'get'
-    _url:str = '/api-v2/projects'
+    _url:str = '/api-v2/sprint-stickers'
     token:str
     _url_params:tuple = ('boardId','includeDeleted','limit','name','offset')
     boardId:str|None = None

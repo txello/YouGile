@@ -69,3 +69,13 @@ response = yougile.query(model)
 for msg in response.json()['content']:
     print(msg['text'])
 ```
+
+## Версии
+
+### v1.0.0
+* Созданы первые модели
+* Создано подключение к серверу API
+
+### v1.0.1
+* Исправлены модели
+* Исправлены комментарии

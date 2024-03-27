@@ -13,7 +13,7 @@ class UserController_search(BaseModel):
     https://ru.yougile.com/api-v2#/operations/UserController_search
     '''
     _method:str = 'get'
-    _url:str = '/api-v2/auth/companies'
+    _url:str = '/api-v2/users'
     token:str
     _url_params:tuple = ('email','limit','offset','projectId')
     email:str|None = None
