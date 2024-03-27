@@ -27,9 +27,9 @@ class AuthKeyController_search(BaseModel):
     '''
     Получить список ключей
     
-    login:str - Логин пользователя (Необязательно)
-    password:str - Пароль пользователя (Необязательно)
-    companyId:str - ID компании (Необязательно)
+    login:str - Логин пользователя (Обязательно)
+    password:str - Пароль пользователя (Обязательно)
+    companyId:str - ID компании (Обязательно)
     
     https://ru.yougile.com/api-v2#/operations/AuthKeyController_search
     '''
