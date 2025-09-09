@@ -72,6 +72,7 @@ class TaskController_get(BaseModel):
     '''
     _method:str = 'get'
     _url:str = '/api-v2/tasks/{id}'
+    token:str
     _url_parse:tuple = ('id',)
     id:str
     
@@ -100,6 +101,7 @@ class TaskController_update(BaseModel):
     '''
     _method:str = 'put'
     _url:str = '/api-v2/tasks/{id}'
+    token:str
     _url_parse:tuple = ('id',)
     id:str
     deleted:bool|None = None
