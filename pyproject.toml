@@ -1,0 +1,21 @@
+[project]
+name = "yougile-api"
+version = "1.1.0"
+authors = [
+  { name="txello", email="txello7@proton.me" },
+]
+description = "Yougile API models"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "pydantic",
+  "requests"
+]
+[project.urls]
+Homepage = "https://github.com/txello/YouGile"
+Issues = "https://github.com/txello/YouGile/issues"
