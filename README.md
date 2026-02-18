@@ -32,15 +32,19 @@
 Вы можете использовать токен не только к отдельным моделям, но и к самой функции запроса:
 
 ```python
+import requests
 import yougile
 import yougile.models as models
 
-def yougile_get(model:yougile.BaseModel) -> yougile.Response:
+def yougile_get(model: yougile.BaseModel) -> requests.Response:
     return yougile.query(model,token="TOKEN")
+
 model = models.ChatMessageController_search(chatId="12324")
 response = yougile_get(model)
+
 for msg in response.json()['content']:
     print(msg['text'])
+
 ```
 
 ## Примеры
@@ -101,3 +105,10 @@ for msg in response.json()['content']:
 * Исправлены модели в документации
 * Улучшена документация: Заменена на Google Docstring
 * Выполнен рефакторинг кода
+
+### v1.2.0
+
+* Добавлены модели `CrmContactPersonsController_create` и
+`CrmExternalIdController_findContactByExternalId`.
+* Изменена лицензия в файле `LICENSE` с `GNU GPL v3.0`
+на `MIT` (Спасибо [XTerris](https://github.com/XTerris)).
