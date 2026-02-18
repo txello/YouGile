@@ -94,6 +94,8 @@ from .webhooks import (
 )
 from .companies import CompanyController_get, CompanyController_update
 from .files import FileController_uploadFile
+from .crm import CrmContactPersonsController_create
+from .crmids import CrmExternalIdController_findContactByExternalId
 
 __all__ = [
     "AuthKeyController_companiesList",
@@ -162,4 +164,6 @@ __all__ = [
     "CompanyController_get",
     "CompanyController_update",
     "FileController_uploadFile",
+    "CrmContactPersonsController_create",
+    "CrmExternalIdController_findContactByExternalId",
 ]
