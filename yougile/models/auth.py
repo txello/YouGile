@@ -5,6 +5,7 @@ class getCompanies(BaseModel):
     """
     Получить список компаний
 
+    Args:
         login (str): Логин пользователя
         password (str): Пароль пользователя
         name (str, optional): Название компании
@@ -30,6 +31,7 @@ class AuthKeyController_companiesList(getCompanies):
     """
     Получить список компаний
 
+    Args:
         login (str): Логин пользователя
         password (str): Пароль пользователя
         name (str, optional): Название компании
@@ -46,6 +48,7 @@ class AuthKeyController_search(BaseModel):
     """
     Получить список ключей
 
+    Args:
         login (str): Логин пользователя
         password (str): Пароль пользователя
         companyId (str): ID компании
@@ -64,6 +67,7 @@ class AuthKeyController_create(BaseModel):
     """
     Создать ключ
 
+    Args:
         login (str): Логин пользователя
         password (str): Пароль пользователя
         companyId (str): ID компании
@@ -82,6 +86,7 @@ class AuthKeyController_delete(BaseModel):
     """
     Удалить ключ
 
+    Args:
         key (str): Ключ
 
     https://ru.yougile.com/api-v2#/operations/AuthKeyController_delete

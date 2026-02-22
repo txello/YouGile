@@ -7,6 +7,7 @@ class CrmExternalIdController_findContactByExternalId(BaseModel):
 
     Найти контакт CRM по идентификатору внешнего мессенджера
 
+    Args:
         chatId (str): ID чата во внешнем мессенджере
         provider (str): Провайдер внешней интеграции
 

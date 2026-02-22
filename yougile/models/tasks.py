@@ -228,7 +228,6 @@ class TaskController_updateChatSubscribers(BaseModel):
         token (str): Токен (Обязательно)
 
         id (str): ID задачи (Обязательно)
-
         content (list): Подписчики чата задачи (Обязательно)
 
     https://ru.yougile.com/api-v2#/operations/TaskController_updateChatSubscribers

@@ -5,6 +5,7 @@ class CrmContactPersonsController_create(BaseModel):
     """
     Создать контактное лицо
 
+    Args:
         projectId (str): ID CRM проекта, где создаётся контакт
         title (str): Имя/название контактного лица
         fields (dict): Поля контактного лица
