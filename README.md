@@ -11,6 +11,7 @@
 ```console
 > pip install pydantic
 > pip install requests
+> pip install httpx
 ```
 
 Если вы устанавливаете из PyPI, то эти библиотеки устанавливаются автоматически:
