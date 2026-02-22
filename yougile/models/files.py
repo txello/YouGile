@@ -11,7 +11,7 @@ class FileController_uploadFile(BaseModel):
     Args:
         token (str): Токен
 
-    file: bytes - Файл (Обязательно)
+        file (bytes): Файл (Обязательно)
 
     https://ru.yougile.com/api-v2#/operations/FileController_uploadFile
     """

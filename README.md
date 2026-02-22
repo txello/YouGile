@@ -83,17 +83,39 @@ for msg in response.json()['content']:
     print(msg['text'])
 ```
 
+### 4. Асинхронный запрос: Загружаем файл
+
+```python
+import asyncio
+import yougile
+import yougile.models as models
+
+async def main():
+    model = models.FileController_uploadFile(
+        token="YOUR_TOKEN",
+        file=r"C:\Users\txello\Desktop\test.png",
+    )
+    response = await yougile.query_async(model)
+    print(response.json())
+
+asyncio.run(main())
+
+```
+
 ## Версии
 
-### v1.0.0
+### v1.3.0
 
-* Созданы первые модели
-* Создано подключение к серверу API
+* Добавлена асинхронная поддержка через функцию `query_async` (Через библиотеку `httpx`).
+* Фильтрация версий изменена с последней на первую.
+* Исправлены `docstrings`.
 
-### v1.0.1
+### v1.2.0
 
-* Исправлены модели
-* Исправлены комментарии
+* Добавлены модели `CrmContactPersonsController_create` и
+`CrmExternalIdController_findContactByExternalId`.
+* Изменена лицензия в файле `LICENSE` с `GNU GPL v3.0`
+на `MIT` (Спасибо [XTerris](https://github.com/XTerris)).
 
 ### v1.1.0
 
@@ -106,9 +128,12 @@ for msg in response.json()['content']:
 * Улучшена документация: Заменена на Google Docstring
 * Выполнен рефакторинг кода
 
-### v1.2.0
+### v1.0.1
 
-* Добавлены модели `CrmContactPersonsController_create` и
-`CrmExternalIdController_findContactByExternalId`.
-* Изменена лицензия в файле `LICENSE` с `GNU GPL v3.0`
-на `MIT` (Спасибо [XTerris](https://github.com/XTerris)).
+* Исправлены модели
+* Исправлены комментарии
+
+### v1.0.0
+
+* Созданы первые модели
+* Создано подключение к серверу API

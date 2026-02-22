@@ -1,6 +1,6 @@
 [project]
 name = "yougile-api"
-version = "1.2.0"
+version = "1.3.0"
 authors = [
   { name="txello", email="txello7@proton.me" },
 ]
@@ -14,7 +14,8 @@ classifiers = [
 ]
 dependencies = [
   "pydantic",
-  "requests"
+  "requests",
+  "httpx",
 ]
 [project.urls]
 Homepage = "https://github.com/txello/YouGile"
