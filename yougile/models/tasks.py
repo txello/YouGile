@@ -29,6 +29,8 @@ class TaskController_search(BaseModel):
         "includeDeleted",
         "limit",
         "offset",
+        "stickerId",
+        "stickerStateId",
         "title",
     )
 
@@ -72,6 +74,8 @@ class TaskController_searchReversed(BaseModel):
         "includeDeleted",
         "limit",
         "offset",
+        "stickerId",
+        "stickerStateId",
         "title",
     )
 
