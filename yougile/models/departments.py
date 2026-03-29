@@ -19,7 +19,7 @@ class DepartmentController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/departments"
-    token: str | None = None
+    token: str
     _url_params: tuple = ("includeDeleted", "limit", "offset", "title")
 
     includeDeleted: bool | None = None
@@ -45,7 +45,7 @@ class DepartmentController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/departments"
-    token: str | None = None
+    token: str
 
     title: str | None = None
     parentId: str | None = None
@@ -66,7 +66,7 @@ class DepartmentController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/departments/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -90,7 +90,7 @@ class DepartmentController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/departments/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str

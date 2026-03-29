@@ -23,7 +23,7 @@ class ChatMessageController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/chats/{chatId}/messages"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("chatId",)
     _url_params: tuple = (
         "fromUserId",
@@ -64,7 +64,7 @@ class ChatMessageController_sendMessage(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/chats/{chatId}/messages"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("chatId",)
 
     chatId: str
@@ -88,7 +88,7 @@ class ChatMessageController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/chats/{chatId}/messages/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("chatId", "id")
     chatId: str
     id: str
@@ -112,7 +112,7 @@ class ChatMessageController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/chats/{chatId}/messages/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("chatId", "id")
 
     chatId: str

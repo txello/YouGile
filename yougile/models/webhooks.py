@@ -16,7 +16,7 @@ class WebhookController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/webhooks"
-    token: str | None = None
+    token: str
 
     url: str
     event: str
@@ -36,7 +36,7 @@ class WebhookController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/webhooks"
-    token: str | None = None
+    token: str
     _url_params: tuple = ("includeDeleted",)
 
     includeDeleted: bool | None = None
@@ -60,7 +60,7 @@ class WebhookController_put(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/webhooks/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str

@@ -18,7 +18,7 @@ class ProjectRolesController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/projects/{projectId}/roles"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("projectId",)
     _url_params: tuple = ("limit", "name", "offset")
 
@@ -45,7 +45,7 @@ class ProjectRolesController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/projects/{projectId}/roles"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("projectId",)
 
     projectId: str
@@ -69,7 +69,7 @@ class ProjectRolesController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/projects/{projectId}/roles/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("projectId", "id")
 
     id: str
@@ -94,7 +94,7 @@ class ProjectRolesController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/projects/{projectId}/roles/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("projectId", "id")
 
     id: str
@@ -119,7 +119,7 @@ class ProjectRolesController_delete(BaseModel):
 
     _method: str = "delete"
     _url: str = "/api-v2/projects/{projectId}/roles/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("projectId", "id")
 
     id: str

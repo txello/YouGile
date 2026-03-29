@@ -18,7 +18,7 @@ class ProjectController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/projects"
-    token: str | None = None
+    token: str
     _url_params: tuple = ("includeDeleted", "limit", "offset", "title")
 
     includeDeleted: bool | None = None
@@ -42,7 +42,7 @@ class ProjectController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/projects"
-    token: str | None = None
+    token: str
 
     title: str
     users: dict | None = None
@@ -62,7 +62,7 @@ class ProjectController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/projects/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -85,7 +85,7 @@ class ProjectController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/projects/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
