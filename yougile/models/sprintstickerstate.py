@@ -18,7 +18,7 @@ class SprintStickerStateController_get(BaseModel):
     _method: str = "get"
     _url: str = "/api-v2/sprint-stickers/{stickerId}/states/{stickerStateId}"
     _url_parse: tuple = ("stickerId", "stickerStateId")
-    token: str
+    token: str | None = None
     _url_params: tuple = ("includeDeleted",)
 
     stickerId: str
@@ -46,7 +46,7 @@ class SprintStickerStateController_update(BaseModel):
     _method: str = "put"
     _url: str = "/api-v2/sprint-stickers/{stickerId}/states/{stickerStateId}"
     _url_parse: tuple = ("stickerId", "stickerStateId")
-    token: str
+    token: str | None = None
 
     stickerId: str
     stickerStateId: str
@@ -73,7 +73,7 @@ class SprintStickerStateController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/sprint-stickers/{stickerId}/states"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("stickerId",)
 
     stickerId: str

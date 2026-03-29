@@ -20,7 +20,7 @@ class TaskController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks"
-    token: str
+    token: str | None = None
     _url_params: tuple = (
         "assignedTo",
         "columnId",
@@ -59,7 +59,7 @@ class TaskController_searchReversed(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks"
-    token: str
+    token: str | None = None
     _url_params: tuple = (
         "assignedTo",
         "columnId",
@@ -106,7 +106,7 @@ class TaskController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/tasks"
-    token: str
+    token: str | None = None
 
     title: str
     columnId: str | None = None
@@ -140,7 +140,7 @@ class TaskController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -177,7 +177,7 @@ class TaskController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/tasks/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -214,7 +214,7 @@ class TaskController_getChatSubscribers(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks/{id}/chat-subscribers"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -235,7 +235,7 @@ class TaskController_updateChatSubscribers(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/tasks/{id}/chat-subscribers"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str

@@ -13,7 +13,7 @@ class CompanyController_get(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/companies*"
-    token: str
+    token: str | None = None
 
 
 class CompanyController_update(BaseModel):
@@ -33,7 +33,7 @@ class CompanyController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/companies*"
-    token: str
+    token: str | None = None
 
     deleted: bool | None = None
     title: str | None = None
