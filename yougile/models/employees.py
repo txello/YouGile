@@ -17,7 +17,7 @@ class UserController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/users"
-    token: str
+    token: str | None = None
     _url_params: tuple = ("email", "limit", "offset", "projectId")
 
     email: str | None = None
@@ -40,7 +40,7 @@ class UserController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/users"
-    token: str
+    token: str | None = None
 
     email: str
     isAdmin: bool | None = None
@@ -59,7 +59,7 @@ class UserController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/users/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -79,7 +79,7 @@ class UserController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/users/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -99,7 +99,7 @@ class UserController_delete(BaseModel):
 
     _method: str = "delete"
     _url: str = "/api-v2/users/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
