@@ -18,7 +18,7 @@ class FileController_uploadFile(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/upload-file"
-    token: str
+    token: str | None = None
     _file: tuple = ("file",)
 
     file: str
