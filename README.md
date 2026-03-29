@@ -180,6 +180,7 @@ asyncio.run(main())
 * Параметр `token` в API-моделях сделан необязательным: токен теперь можно хранить только в клиенте или передавать в функцию запроса
 * Исправлены модели `CompanyController_get` и `CompanyController_update`
 * Исправлены модели `TaskController_search`, `TaskController_searchReversed`, `TaskController_create` и `TaskController_update`
+* Исправлены модели `GroupChatController_create`, `GroupChatController_update`, `WebhookController_create` и `WebhookController_put`
 * Обновлена документация и примеры использования
 
 ### v1.3.0

@@ -36,6 +36,8 @@ class GroupChatController_create(BaseModel):
 
         title (str): Название чата
         users (dict): Сотрудники в чате
+        userRoleMap (dict): Роли сотрудников в чате
+        roleConfigMap (dict): Настройки ролей
 
     https://ru.yougile.com/api-v2#/operations/GroupChatController_create
     """
@@ -46,6 +48,8 @@ class GroupChatController_create(BaseModel):
 
     title: str
     users: dict
+    userRoleMap: dict
+    roleConfigMap: dict
 
 
 class GroupChatController_get(BaseModel):
@@ -79,6 +83,8 @@ class GroupChatController_update(BaseModel):
         deleted (bool, optional): Если true, значит объект удален
         title (str, optional): Название чата
         users (dict, optional): Сотрудники в чате
+        userRoleMap (dict, optional): Роли сотрудников в чате
+        roleConfigMap (dict, optional): Настройки ролей
 
     https://ru.yougile.com/api-v2#/operations/GroupChatController_update
     """
@@ -92,3 +98,5 @@ class GroupChatController_update(BaseModel):
     deleted: bool | None = None
     title: str | None = None
     users: dict | None = None
+    userRoleMap: dict | None = None
+    roleConfigMap: dict | None = None

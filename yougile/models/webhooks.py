@@ -10,6 +10,7 @@ class WebhookController_create(BaseModel):
 
         url (str): URL подписки
         event (str): Событие подписки. Формат: <тип_объекта>-<событие>. Для объектов project,board,column,task,sticker,department,group_chat,chat_message, возможные события: created,deleted,restored,moved,renamed,updated. Для объектов user, возможные события: added, removed. Может использоваться javascript regexp как значение. Например, task-* - подписка на все события по задачам, или .* - подписка на все события
+        filters (dict): Дополнительные фильтры для вебхука
 
     https://ru.yougile.com/api-v2#/operations/WebhookController_create
     """
@@ -20,6 +21,7 @@ class WebhookController_create(BaseModel):
 
     url: str
     event: str
+    filters: dict
 
 
 class WebhookController_search(BaseModel):
@@ -54,6 +56,7 @@ class WebhookController_put(BaseModel):
         url (str, optional): URL подписки
         event (str, optional): Событие подписки. Формат: <тип_объекта>-<событие>. Для объектов project,board,column,task,sticker,department,group_chat,chat_message, возможные события: created,deleted,restored,moved,renamed,updated. Для объектов user, возможные события: added, removed. Может использоваться javascript regexp как значение. Например, task-* - подписка на все события по задачам, или .* - подписка на все события
         disabled (bool, optional): Если true, то вызываться не будет
+        filters (dict, optional): Дополнительные фильтры для вебхука
 
     https://ru.yougile.com/api-v2#/operations/WebhookController_put
     """
@@ -68,3 +71,4 @@ class WebhookController_put(BaseModel):
     url: str | None = None
     event: str | None = None
     disabled: bool | None = None
+    filters: dict | None = None
