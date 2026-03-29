@@ -181,6 +181,7 @@ asyncio.run(main())
 * Исправлены модели `CompanyController_get` и `CompanyController_update`
 * Исправлены модели `TaskController_search`, `TaskController_searchReversed`, `TaskController_create` и `TaskController_update`
 * Исправлены модели `GroupChatController_create`, `GroupChatController_update`, `WebhookController_create` и `WebhookController_put`
+* Исправлены модели `DepartmentController_search` и `ChatMessageController_sendMessage`
 * Обновлена документация и примеры использования
 
 ### v1.3.0
