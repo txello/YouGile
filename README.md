@@ -26,11 +26,19 @@
 
 1. Название моделей полностью копируют URL этой модели на официальном API.
 2. У всех моделей есть описания параметров, краткого описания из официального API и ссылка на запрос.
-3. Названия параметров модели и их типизация идентичны параметрам из официального API (За исключением параметра ```token```)
+3. Названия параметров модели и их типизация идентичны параметрам из официального API (За исключением параметра `token`)
 
 ## Возможности
 
-Вы можете использовать токен не только к отдельным моделям, но и к самой функции запроса:
+Токен можно передавать тремя способами:
+
+1. в саму модель
+2. в `yougile.query(...)` / `yougile.query_async(...)`
+3. в `yougile.Client(...)` / `yougile.AsyncClient(...)`
+
+Приоритет такой: явный аргумент функции/метода, затем токен клиента, затем токен модели.
+
+Пример передачи токена в функцию запроса:
 
 ```python
 import requests
@@ -38,13 +46,13 @@ import yougile
 import yougile.models as models
 
 def yougile_get(model: yougile.BaseModel) -> requests.Response:
-    return yougile.query(model,token="TOKEN")
+    return yougile.query(model, token="TOKEN")
 
 model = models.ChatMessageController_search(chatId="12324")
 response = yougile_get(model)
 
-for msg in response.json()['content']:
-    print(msg['text'])
+for msg in response.json()["content"]:
+    print(msg["text"])
 
 ```
 
@@ -53,12 +61,15 @@ for msg in response.json()['content']:
 ### 1. Получаем список доступных компаний
 
 ```python
-import yougile # Импортируем библиотеку
-import yougile.models as models # Импортируем модели
+import yougile  # Импортируем библиотеку
+import yougile.models as models  # Импортируем модели
 
-model = models.AuthKeyController_companiesList(login="USERNAME",password="PASSWORD") # Указываем модель запроса листа компаний через авторизацию
-response = yougile.query(model) # Делаем запрос на сервер
-print(response.text) # Получаем ответ
+model = models.AuthKeyController_companiesList(
+    login="USERNAME",
+    password="PASSWORD",
+)  # Указываем модель запроса листа компаний через авторизацию
+response = yougile.query(model)  # Делаем запрос на сервер
+print(response.text)  # Получаем ответ
 ```
 
 ### 2. Создаем токен
@@ -67,9 +78,13 @@ print(response.text) # Получаем ответ
 import yougile
 import yougile.models as models
 
-model = models.AuthKeyController_create(login="USERNAME",password="PASSWORD",companyId="12345")
+model = models.AuthKeyController_create(
+    login="USERNAME",
+    password="PASSWORD",
+    companyId="12345",
+)
 response = yougile.query(model)
-print(response.json()['key'])
+print(response.json()["key"])
 ```
 
 ### 3. Получаем историю сообщений
@@ -78,10 +93,10 @@ print(response.json()['key'])
 import yougile
 import yougile.models as models
 
-model = models.ChatMessageController_search(token="TOKEN",chatId="12324")
+model = models.ChatMessageController_search(token="TOKEN", chatId="12324")
 response = yougile.query(model)
-for msg in response.json()['content']:
-    print(msg['text'])
+for msg in response.json()["content"]:
+    print(msg["text"])
 ```
 
 ### 4. Асинхронный запрос: Загружаем файл
@@ -101,6 +116,59 @@ async def main():
 
 asyncio.run(main())
 
+```
+
+### 5. Self-hosted: указываем `base_url`
+
+```python
+import yougile
+import yougile.models as models
+
+model = models.ChatMessageController_search(token="TOKEN", chatId="12324")
+response = yougile.query(
+    model,
+    base_url="https://yougile.example.com",
+)
+
+for msg in response.json()["content"]:
+    print(msg["text"])
+```
+
+### 6. Клиент с настройками подключения
+
+```python
+import yougile
+import yougile.models as models
+
+client = yougile.Client(
+    base_url="https://yougile.example.com",
+    token="TOKEN",
+)
+
+model = models.ChatMessageController_search(chatId="12324")
+response = client.query(model)
+
+for msg in response.json()["content"]:
+    print(msg["text"])
+```
+
+### 7. Асинхронный клиент с настройками подключения
+
+```python
+import asyncio
+import yougile
+import yougile.models as models
+
+async def main():
+    client = yougile.AsyncClient(
+        base_url="https://yougile.example.com",
+        token="TOKEN",
+    )
+    model = models.ChatMessageController_search(chatId="12324")
+    response = await client.query(model)
+    print(response.json())
+
+asyncio.run(main())
 ```
 
 ## Версии
