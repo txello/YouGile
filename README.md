@@ -105,6 +105,19 @@ asyncio.run(main())
 
 ## Версии
 
+### v1.4.0
+
+* Добавлена поддержка self-hosted YouGile через параметр `base_url` в `query` и `query_async`
+* Добавлены `yougile.Client` и `yougile.AsyncClient` для хранения настроек подключения
+* Параметр `token` в API-моделях сделан необязательным: токен теперь можно хранить только в клиенте или передавать в функцию запроса
+* Исправлены модели `CompanyController_get` и `CompanyController_update`
+* Исправлены модели `TaskController_search`, `TaskController_searchReversed`, `TaskController_create` и `TaskController_update`
+* Исправлены модели `GroupChatController_create`, `GroupChatController_update`, `WebhookController_create` и `WebhookController_put`
+* Исправлены модели `DepartmentController_search` и `ChatMessageController_sendMessage`
+* Обновлена документация и примеры использования
+
+Спасибо @ilsky69 за найденные проблемы и вклад в улучшение проекта.
+
 ### v1.3.0
 
 * Добавлена асинхронная поддержка через функцию `query_async` (Через библиотеку `httpx`).

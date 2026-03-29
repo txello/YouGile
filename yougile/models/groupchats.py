@@ -18,7 +18,7 @@ class GroupChatController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/group-chats"
-    token: str
+    token: str | None = None
     _url_params: tuple = ("includeDeleted", "limit", "offset", "title")
 
     includeDeleted: bool | None = None
@@ -36,16 +36,20 @@ class GroupChatController_create(BaseModel):
 
         title (str): Название чата
         users (dict): Сотрудники в чате
+        userRoleMap (dict): Роли сотрудников в чате
+        roleConfigMap (dict): Настройки ролей
 
     https://ru.yougile.com/api-v2#/operations/GroupChatController_create
     """
 
     _method: str = "post"
     _url: str = "/api-v2/group-chats"
-    token: str
+    token: str | None = None
 
     title: str
     users: dict
+    userRoleMap: dict
+    roleConfigMap: dict
 
 
 class GroupChatController_get(BaseModel):
@@ -62,7 +66,7 @@ class GroupChatController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/group-chats/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -79,16 +83,20 @@ class GroupChatController_update(BaseModel):
         deleted (bool, optional): Если true, значит объект удален
         title (str, optional): Название чата
         users (dict, optional): Сотрудники в чате
+        userRoleMap (dict, optional): Роли сотрудников в чате
+        roleConfigMap (dict, optional): Настройки ролей
 
     https://ru.yougile.com/api-v2#/operations/GroupChatController_update
     """
 
     _method: str = "put"
     _url: str = "/api-v2/group-chats/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
     deleted: bool | None = None
     title: str | None = None
     users: dict | None = None
+    userRoleMap: dict | None = None
+    roleConfigMap: dict | None = None
