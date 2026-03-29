@@ -1,6 +1,6 @@
 [project]
 name = "yougile-api"
-version = "1.4.0"
+version = "1.3.0"
 authors = [
   { name="txello", email="txello7@proton.me" },
 ]

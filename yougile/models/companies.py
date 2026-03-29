@@ -11,9 +11,9 @@ class CompanyController_get(BaseModel):
     https://ru.yougile.com/api-v2#/operations/CompanyController_get
     """
 
-    _method: str = "get"
-    _url: str = "/api-v2/companies{*companyId}"
-    token: str | None = None
+    _method: str = "post"
+    _url: str = "/api-v2/companies*"
+    token: str
 
 
 class CompanyController_update(BaseModel):
@@ -32,8 +32,8 @@ class CompanyController_update(BaseModel):
     """
 
     _method: str = "put"
-    _url: str = "/api-v2/companies{*companyId}"
-    token: str | None = None
+    _url: str = "/api-v2/companies*"
+    token: str
 
     deleted: bool | None = None
     title: str | None = None
