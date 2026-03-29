@@ -178,6 +178,7 @@ asyncio.run(main())
 * Добавлена поддержка self-hosted YouGile через параметр `base_url` в `query` и `query_async`
 * Добавлены `yougile.Client` и `yougile.AsyncClient` для хранения настроек подключения
 * Параметр `token` в API-моделях сделан необязательным: токен теперь можно хранить только в клиенте или передавать в функцию запроса
+* Исправлены модели `CompanyController_get` и `CompanyController_update`
 * Обновлена документация и примеры использования
 
 ### v1.3.0
