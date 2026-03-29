@@ -15,6 +15,7 @@ class CrmExternalIdController_findContactByExternalId(BaseModel):
     """
 
     _method: str = "get"
+    token: str | None = None
     _url: str = "/api-v2/crm/contacts/by-external-id"
     chatId: str
     provider: str

@@ -14,6 +14,7 @@ class CrmContactPersonsController_create(BaseModel):
     """
 
     _method: str = "post"
+    token: str | None = None
     _url: str = "/api-v2/crm/contact-persons"
     projectId: str
     title: str

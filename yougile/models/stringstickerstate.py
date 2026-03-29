@@ -18,7 +18,7 @@ class StringStickerStateController_get(BaseModel):
     _method: str = "get"
     _url: str = "/api-v2/string-stickers/{stickerId}/states/{stickerStateId}"
     _url_parse: tuple = ("stickerId", "stickerStateId")
-    token: str
+    token: str | None = None
     _url_params: tuple = ("includeDeleted",)
 
     stickerId: str
@@ -45,7 +45,7 @@ class StringStickerStateController_update(BaseModel):
     _method: str = "put"
     _url: str = "/api-v2/string-stickers/{stickerId}/states/{stickerStateId}"
     _url_parse: tuple = ("stickerId", "stickerStateId")
-    token: str
+    token: str | None = None
 
     stickerId: str
     stickerStateId: str
@@ -70,7 +70,7 @@ class StringStickerStateController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/string-stickers/{stickerId}/states"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("stickerId",)
 
     stickerId: str
