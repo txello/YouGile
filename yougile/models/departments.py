@@ -20,7 +20,7 @@ class DepartmentController_search(BaseModel):
     _method: str = "get"
     _url: str = "/api-v2/departments"
     token: str | None = None
-    _url_params: tuple = ("includeDeleted", "limit", "offset", "title")
+    _url_params: tuple = ("includeDeleted", "limit", "offset", "parentId", "title")
 
     includeDeleted: bool | None = None
     limit: int = 50

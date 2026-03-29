@@ -56,7 +56,7 @@ class ChatMessageController_sendMessage(BaseModel):
 
         chatId (str): ID чата
         text (str): Текст сообщения
-        textHtml (int): Текст сообщения в формате HTML
+        textHtml (str): Текст сообщения в формате HTML
         label (str): Быстрая ссылка
 
     https://ru.yougile.com/api-v2#/operations/ChatMessageController_sendMessage
@@ -69,7 +69,7 @@ class ChatMessageController_sendMessage(BaseModel):
 
     chatId: str
     text: str
-    textHtml: int
+    textHtml: str
     label: str
 
 
