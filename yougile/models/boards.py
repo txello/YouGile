@@ -19,7 +19,7 @@ class BoardController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/boards"
-    token: str | None = None
+    token: str
     _url_params: tuple = ("includeDeleted", "limit", "offset", "projectId", "title")
 
     includeDeleted: bool | None = None
@@ -45,7 +45,7 @@ class BoardController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/boards"
-    token: str | None = None
+    token: str
 
     title: str
     projectId: str
@@ -66,7 +66,7 @@ class BoardController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/boards/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -90,7 +90,7 @@ class BoardController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/boards/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
