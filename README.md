@@ -185,7 +185,7 @@ asyncio.run(main())
 * Исправлены модели `CrmContactPersonsController_create` и `CrmExternalIdController_findContactByExternalId`
 * Обновлена документация и примеры использования
 
-Спасибо @ilsky69 за найденные проблемы и вклад в улучшение проекта.
+Спасибо [ilsky69](https://github.com/ilsky69) за найденные проблемы и вклад в улучшение проекта.
 
 ### v1.3.0
 
