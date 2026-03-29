@@ -1,4 +1,6 @@
-from .request import query, BaseModel
-from .async_request import query_async
+from pydantic import BaseModel
 
-__all__ = ["query", "query_async", "BaseModel"]
+from .async_request import AsyncClient, query_async
+from .request import Client, query
+
+__all__ = ["AsyncClient", "BaseModel", "Client", "query", "query_async"]

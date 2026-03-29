@@ -19,7 +19,7 @@ class SprintStickerController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/sprint-stickers"
-    token: str
+    token: str | None = None
     _url_params: tuple = ("boardId", "includeDeleted", "limit", "name", "offset")
 
     boardId: str | None = None
@@ -44,7 +44,7 @@ class SprintStickerController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/sprint-stickers"
-    token: str
+    token: str | None = None
 
     name: str
     states: list
@@ -64,7 +64,7 @@ class SprintStickerController_getSticker(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/sprint-stickers/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -86,7 +86,7 @@ class SprintStickerController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/sprint-stickers/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str

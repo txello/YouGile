@@ -19,7 +19,7 @@ class ColumnController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/columns"
-    token: str
+    token: str | None = None
     _url_params: tuple = ("boardId", "includeDeleted", "limit", "offset", "title")
 
     boardId: str | None = None
@@ -45,7 +45,7 @@ class ColumnController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/columns"
-    token: str
+    token: str | None = None
 
     title: str | None = None
     color: int | None = None
@@ -66,7 +66,7 @@ class ColumnController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/columns/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
@@ -90,7 +90,7 @@ class ColumnController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/columns/{id}"
-    token: str
+    token: str | None = None
     _url_parse: tuple = ("id",)
 
     id: str
