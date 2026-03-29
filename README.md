@@ -182,9 +182,10 @@ asyncio.run(main())
 * Исправлены модели `TaskController_search`, `TaskController_searchReversed`, `TaskController_create` и `TaskController_update`
 * Исправлены модели `GroupChatController_create`, `GroupChatController_update`, `WebhookController_create` и `WebhookController_put`
 * Исправлены модели `DepartmentController_search` и `ChatMessageController_sendMessage`
+* Исправлены модели `CrmContactPersonsController_create` и `CrmExternalIdController_findContactByExternalId`
 * Обновлена документация и примеры использования
 
-Спасибо @ilsky69 за найденные проблемы и вклад в улучшение проекта.
+Спасибо [ilsky69](https://github.com/ilsky69) за найденные проблемы и вклад в улучшение проекта.
 
 ### v1.3.0
 
@@ -219,4 +220,3 @@ asyncio.run(main())
 
 * Созданы первые модели
 * Создано подключение к серверу API
-
