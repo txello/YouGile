@@ -13,24 +13,20 @@ class TaskController_search(BaseModel):
         includeDeleted (bool, optional): По умолчанию, если объект был отмечен как удаленный, то он не будет найден. Поставьте true, чтобы удаленные объекты возвращались (Необязательно)
         limit (int, optional): Количество элементов, которые хочется получить. Максимум 1000 (По умолчанию = 50)
         offset (int, optional): Индекс первого элемента страницы (По умолчанию = 0)
-        stickerId (str, optional): ID стикера для фильтрации (Необязательно)
-        stickerStateId (str, optional): ID состояния стикера для фильтрации (Необязательно)
         title (str, optional): Заголовок задачи (Необязательно)
 
     https://ru.yougile.com/api-v2#/operations/TaskController_search
     """
 
     _method: str = "get"
-    _url: str = "/api-v2/task-list"
-    token: str | None = None
+    _url: str = "/api-v2/tasks"
+    token: str
     _url_params: tuple = (
         "assignedTo",
         "columnId",
         "includeDeleted",
         "limit",
         "offset",
-        "stickerId",
-        "stickerStateId",
         "title",
     )
 
@@ -39,8 +35,6 @@ class TaskController_search(BaseModel):
     includeDeleted: bool | None = None
     limit: int = 50
     offset: int = 0
-    stickerId: str | None = None
-    stickerStateId: str | None = None
     title: str | None = None
 
 
@@ -58,24 +52,20 @@ class TaskController_searchReversed(BaseModel):
         includeDeleted (bool): По умолчанию, если объект был отмечен как удаленный, то он не будет найден. Поставьте true, чтобы удаленные объекты возвращались (Необязательно)
         limit (int): Количество элементов, которые хочется получить. Максимум 1000 (По умолчанию = 50)
         offset (int): Индекс первого элемента страницы (По умолчанию = 0)
-        stickerId (str, optional): ID стикера для фильтрации (Необязательно)
-        stickerStateId (str, optional): ID состояния стикера для фильтрации (Необязательно)
         title (str): Заголовок задачи (Необязательно)
 
-    https://ru.yougile.com/api-v2#/operations/TaskController_searchReversed
+    https://ru.yougile.com/api-v2#/operations/TaskController_search
     """
 
     _method: str = "get"
     _url: str = "/api-v2/tasks"
-    token: str | None = None
+    token: str
     _url_params: tuple = (
         "assignedTo",
         "columnId",
         "includeDeleted",
         "limit",
         "offset",
-        "stickerId",
-        "stickerStateId",
         "title",
     )
 
@@ -84,8 +74,6 @@ class TaskController_searchReversed(BaseModel):
     includeDeleted: bool | None = None
     limit: int = 50
     offset: int = 0
-    stickerId: str | None = None
-    stickerStateId: str | None = None
     title: str | None = None
 
 
@@ -112,15 +100,13 @@ class TaskController_create(BaseModel):
         idTaskProject (str, optional): ID задачи, внутри проекта (Необязательно)
         stopwatch (dict, optional): Стикер "Секундомер". Позволяет запустить секундомер, а так же ставить его на паузу и запускать заново (Необязательно)
         timer (dict, optional): Стикер "Таймер". Позволяет установить таймер на заданное время, а также возможность ставить его на паузу и запускать заново (Необязательно)
-        deal (dict, optional): Данные для создания CRM сделки. Если указано, задача будет создана как сделка (Необязательно)
-        extensionData (dict, optional): Данные для работы расширения (Необязательно)
 
     https://ru.yougile.com/api-v2#/operations/TaskController_create
     """
 
     _method: str = "post"
     _url: str = "/api-v2/tasks"
-    token: str | None = None
+    token: str
 
     title: str
     columnId: str | None = None
@@ -138,8 +124,6 @@ class TaskController_create(BaseModel):
     idTaskProject: str | None = None
     stopwatch: dict | None = None
     timer: dict | None = None
-    deal: dict | None = None
-    extensionData: dict | None = None
 
 
 class TaskController_get(BaseModel):
@@ -156,7 +140,7 @@ class TaskController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -187,15 +171,13 @@ class TaskController_update(BaseModel):
         idTaskProject (str, optional): ID задачи, внутри проекта (Необязательно)
         stopwatch (dict, optional): Стикер "Секундомер". Позволяет запустить секундомер, а так же ставить его на паузу и запускать заново (Необязательно)
         timer (dict, optional): Стикер "Таймер". Позволяет установить таймер на заданное время, а также возможность ставить его на паузу и запускать заново (Необязательно)
-        deal (dict, optional): Данные для создания CRM сделки. Если указано, задача будет создана как сделка (Необязательно)
-        extensionData (dict, optional): Данные для работы расширения (Необязательно)
 
     https://ru.yougile.com/api-v2#/operations/TaskController_update
     """
 
     _method: str = "put"
     _url: str = "/api-v2/tasks/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -216,8 +198,6 @@ class TaskController_update(BaseModel):
     idTaskProject: str | None = None
     stopwatch: dict | None = None
     timer: dict | None = None
-    deal: dict | None = None
-    extensionData: dict | None = None
 
 
 class TaskController_getChatSubscribers(BaseModel):
@@ -234,7 +214,7 @@ class TaskController_getChatSubscribers(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/tasks/{id}/chat-subscribers"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -255,7 +235,7 @@ class TaskController_updateChatSubscribers(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/tasks/{id}/chat-subscribers"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str

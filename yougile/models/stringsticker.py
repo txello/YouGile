@@ -19,7 +19,7 @@ class StringStickerController_search(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/string-stickers"
-    token: str | None = None
+    token: str
     _url_params: tuple = ("boardId", "includeDeleted", "limit", "name", "offset")
 
     boardId: str | None = None
@@ -45,7 +45,7 @@ class StringStickerController_create(BaseModel):
 
     _method: str = "post"
     _url: str = "/api-v2/string-stickers"
-    token: str | None = None
+    token: str
 
     name: str
     icon: str | None = None
@@ -66,7 +66,7 @@ class StringStickerController_get(BaseModel):
 
     _method: str = "get"
     _url: str = "/api-v2/string-stickers/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
@@ -89,7 +89,7 @@ class StringStickerController_update(BaseModel):
 
     _method: str = "put"
     _url: str = "/api-v2/string-stickers/{id}"
-    token: str | None = None
+    token: str
     _url_parse: tuple = ("id",)
 
     id: str
