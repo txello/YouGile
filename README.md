@@ -6,6 +6,8 @@
 
 ## Установка
 
+Поддерживаемая версия Python: `3.10+`
+
 Если вы устанавливаете вручную, перед использованием библиотеки, необходимо установить следующее:
 
 ```console
@@ -169,6 +171,38 @@ async def main():
     print(response.json())
 
 asyncio.run(main())
+```
+
+### 8. Клиент с timeout
+
+```python
+import yougile
+import yougile.models as models
+
+client = yougile.Client(
+    token="TOKEN",
+    timeout=10.0,
+)
+
+model = models.ChatMessageController_search(chatId="12324")
+response = client.query(model)
+print(response.status_code)
+```
+
+## Разработка
+
+Установка dev-зависимостей:
+
+```console
+> pip install -e ".[dev]"
+```
+
+Локальные проверки:
+
+```console
+> ruff check .
+> pyright
+> pytest
 ```
 
 ## Версии
