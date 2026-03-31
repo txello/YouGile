@@ -1,14 +1,19 @@
 [project]
 name = "yougile-api"
-version = "1.4.0"
+version = "1.4.1"
 authors = [
   { name="txello", email="txello7@proton.me" },
 ]
 description = "Yougile API models"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
