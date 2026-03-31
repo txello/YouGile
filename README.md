@@ -173,6 +173,10 @@ asyncio.run(main())
 
 ## Версии
 
+### v1.4.1
+
+* Исправлена поддержка версии Python с `3.8+` на `3.10+` (Спасибо [ilsky69](https://github.com/ilsky69))
+
 ### v1.4.0
 
 * Добавлена поддержка self-hosted YouGile через параметр `base_url` в `query` и `query_async`
